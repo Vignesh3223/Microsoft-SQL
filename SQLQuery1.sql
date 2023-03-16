@@ -42,7 +42,8 @@ update Trainees set First_Name = 'KARTHI',Last_Name = 'keyan' where Trainee_ID=9
 update Trainees set First_Name = 'PRIYA',Last_Name = 'darshan' where Trainee_ID=7
 
 --like
-select * from Trainees where First_Name like '[J-T]%'
+select * from Trainees where First_Name like '[J-T]%' collate SQL_Latin1_General_CP1_CS_AS
+
 
 --and
 select * from Trainees where Salary >=  20000 and Salary <= 50000 
