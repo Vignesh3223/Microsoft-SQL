@@ -120,6 +120,7 @@ alter table Employee add man_id int default 2 constraint FK_Employee_man_id fore
 on delete cascade on update set default
 
 --select
+select * from Manager
 select * from Employee
 
 --updating values
@@ -129,3 +130,11 @@ update Employee set man_id = 3 where eid = 2 or eid = 6
 
 --cascade update
 update Manager set man_id = 5 where man_id = 1
+
+insert into Employee values (7,'Arun','Tester',5)
+
+delete from Manager where man_id = 5
+
+insert into Manager values (5,'Vasanth')
+
+update Manager set man_id = 1 where man_id = 5
