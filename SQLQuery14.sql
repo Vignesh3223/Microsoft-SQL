@@ -116,15 +116,15 @@ name varchar(25) unique
 
 --procedure to enter records and the working of throw
 
-create procedure sp_names
+alter procedure sp_names
 (@name varchar(25) )
 as begin
-if(@name not like '[ADHKPRSTVY]%')
+if(@name like '[ADHKPRSTVY]%')
 begin
-throw 50001,'Error! Invalid NAME',1
+insert into friends values(@name)
 end
 else begin
-insert into friends values(@name)
+throw 50001,'Error! Invalid NAME',1
 end
 end
 
